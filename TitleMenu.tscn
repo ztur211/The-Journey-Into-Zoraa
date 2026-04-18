@@ -1,0 +1,542 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Font/MerriweatherSans.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Scenery/bg_grasslands.png" type="Texture" id=2]
+[ext_resource path="res://TitleMenuBg.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Tiles/Grass/grassMid.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scenery/cloud1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tiles/Grass/grassCenter.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Scenery/cloud2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Scenery/cloud3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Font/MenuButtonFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/Font/ButtonFont.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Font/MenuFont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://StartButton.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Player/hud_p1.png" type="Texture" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="TitleMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource( 3 )
+speed = -50
+left_limit = -1536
+
+[node name="Grasslands" type="TextureRect" parent="Background"]
+margin_right = 1024.0
+margin_bottom = 512.0
+rect_scale = Vector2( 1.5, 1.8 )
+texture = ExtResource( 2 )
+
+[node name="Grasslands2" type="TextureRect" parent="Background"]
+margin_left = 1536.0
+margin_right = 2560.0
+margin_bottom = 512.0
+rect_scale = Vector2( 1.5, 1.8 )
+texture = ExtResource( 2 )
+
+[node name="Midground" type="Node2D" parent="."]
+script = ExtResource( 3 )
+speed = -50
+left_limit = -2250
+
+[node name="Cloud1" type="TextureRect" parent="Midground"]
+margin_top = -100.0
+margin_right = 128.0
+margin_bottom = -29.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Cloud2" type="TextureRect" parent="Midground"]
+margin_left = 750.0
+margin_right = 879.0
+margin_bottom = 71.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="Cloud3" type="TextureRect" parent="Midground"]
+margin_left = 1500.0
+margin_top = -50.0
+margin_right = 1629.0
+margin_bottom = 21.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="Cloud4" type="TextureRect" parent="Midground"]
+margin_left = 2250.0
+margin_top = -100.0
+margin_right = 2378.0
+margin_bottom = -29.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Cloud5" type="TextureRect" parent="Midground"]
+margin_left = 3000.0
+margin_right = 3129.0
+margin_bottom = 71.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="Cloud6" type="TextureRect" parent="Midground"]
+margin_left = 3750.0
+margin_top = -50.0
+margin_right = 3879.0
+margin_bottom = 21.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="Foreground" type="Node2D" parent="."]
+script = ExtResource( 3 )
+speed = -100
+left_limit = -70
+
+[node name="Ground" type="TextureRect" parent="Foreground"]
+margin_top = 800.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Ground2" type="TextureRect" parent="Foreground"]
+margin_top = 870.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="Ground3" type="TextureRect" parent="Foreground"]
+margin_left = 70.0
+margin_top = 800.0
+margin_right = 140.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground4" type="TextureRect" parent="Foreground"]
+margin_left = 70.0
+margin_top = 870.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="Ground5" type="TextureRect" parent="Foreground"]
+margin_left = 140.0
+margin_top = 800.0
+margin_right = 210.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground6" type="TextureRect" parent="Foreground"]
+margin_left = 140.0
+margin_top = 870.0
+margin_right = 210.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground7" type="TextureRect" parent="Foreground"]
+margin_left = 210.0
+margin_top = 800.0
+margin_right = 280.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground8" type="TextureRect" parent="Foreground"]
+margin_left = 210.0
+margin_top = 870.0
+margin_right = 280.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground9" type="TextureRect" parent="Foreground"]
+margin_left = 280.0
+margin_top = 800.0
+margin_right = 350.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground10" type="TextureRect" parent="Foreground"]
+margin_left = 280.0
+margin_top = 870.0
+margin_right = 350.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground11" type="TextureRect" parent="Foreground"]
+margin_left = 350.0
+margin_top = 800.0
+margin_right = 420.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground12" type="TextureRect" parent="Foreground"]
+margin_left = 350.0
+margin_top = 870.0
+margin_right = 420.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground13" type="TextureRect" parent="Foreground"]
+margin_left = 420.0
+margin_top = 800.0
+margin_right = 490.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground14" type="TextureRect" parent="Foreground"]
+margin_left = 420.0
+margin_top = 870.0
+margin_right = 490.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground15" type="TextureRect" parent="Foreground"]
+margin_left = 490.0
+margin_top = 800.0
+margin_right = 560.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground16" type="TextureRect" parent="Foreground"]
+margin_left = 490.0
+margin_top = 870.0
+margin_right = 560.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground17" type="TextureRect" parent="Foreground"]
+margin_left = 560.0
+margin_top = 800.0
+margin_right = 630.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground18" type="TextureRect" parent="Foreground"]
+margin_left = 560.0
+margin_top = 870.0
+margin_right = 630.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground19" type="TextureRect" parent="Foreground"]
+margin_left = 630.0
+margin_top = 800.0
+margin_right = 700.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground20" type="TextureRect" parent="Foreground"]
+margin_left = 630.0
+margin_top = 870.0
+margin_right = 700.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground21" type="TextureRect" parent="Foreground"]
+margin_left = 700.0
+margin_top = 800.0
+margin_right = 770.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground22" type="TextureRect" parent="Foreground"]
+margin_left = 700.0
+margin_top = 870.0
+margin_right = 770.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground23" type="TextureRect" parent="Foreground"]
+margin_left = 770.0
+margin_top = 800.0
+margin_right = 840.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground24" type="TextureRect" parent="Foreground"]
+margin_left = 770.0
+margin_top = 870.0
+margin_right = 840.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground25" type="TextureRect" parent="Foreground"]
+margin_left = 840.0
+margin_top = 800.0
+margin_right = 910.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground26" type="TextureRect" parent="Foreground"]
+margin_left = 840.0
+margin_top = 870.0
+margin_right = 910.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground27" type="TextureRect" parent="Foreground"]
+margin_left = 910.0
+margin_top = 800.0
+margin_right = 980.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground28" type="TextureRect" parent="Foreground"]
+margin_left = 910.0
+margin_top = 870.0
+margin_right = 980.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground29" type="TextureRect" parent="Foreground"]
+margin_left = 980.0
+margin_top = 800.0
+margin_right = 1050.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground30" type="TextureRect" parent="Foreground"]
+margin_left = 980.0
+margin_top = 870.0
+margin_right = 1050.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground31" type="TextureRect" parent="Foreground"]
+margin_left = 1050.0
+margin_top = 800.0
+margin_right = 1120.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground32" type="TextureRect" parent="Foreground"]
+margin_left = 1050.0
+margin_top = 870.0
+margin_right = 1120.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground33" type="TextureRect" parent="Foreground"]
+margin_left = 1120.0
+margin_top = 800.0
+margin_right = 1190.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground34" type="TextureRect" parent="Foreground"]
+margin_left = 1120.0
+margin_top = 870.0
+margin_right = 1190.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground35" type="TextureRect" parent="Foreground"]
+margin_left = 1190.0
+margin_top = 800.0
+margin_right = 1260.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground36" type="TextureRect" parent="Foreground"]
+margin_left = 1190.0
+margin_top = 870.0
+margin_right = 1260.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground37" type="TextureRect" parent="Foreground"]
+margin_left = 1260.0
+margin_top = 800.0
+margin_right = 1330.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground38" type="TextureRect" parent="Foreground"]
+margin_left = 1260.0
+margin_top = 870.0
+margin_right = 1330.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground39" type="TextureRect" parent="Foreground"]
+margin_left = 1330.0
+margin_top = 800.0
+margin_right = 1400.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground40" type="TextureRect" parent="Foreground"]
+margin_left = 1330.0
+margin_top = 870.0
+margin_right = 1400.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground41" type="TextureRect" parent="Foreground"]
+margin_left = 1400.0
+margin_top = 800.0
+margin_right = 1470.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground42" type="TextureRect" parent="Foreground"]
+margin_left = 1400.0
+margin_top = 870.0
+margin_right = 1470.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Ground43" type="TextureRect" parent="Foreground"]
+margin_left = 1470.0
+margin_top = 800.0
+margin_right = 1540.0
+margin_bottom = 870.0
+texture = ExtResource( 4 )
+
+[node name="Ground44" type="TextureRect" parent="Foreground"]
+margin_left = 1470.0
+margin_top = 870.0
+margin_right = 1540.0
+margin_bottom = 940.0
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 200.0
+margin_right = 1440.0
+margin_bottom = 327.0
+custom_colors/font_color = Color( 0.501961, 0.745098, 0.121569, 1 )
+custom_colors/font_color_shadow = Color( 0.768314, 0.976563, 0.442505, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "The Journey Into Zoraa"
+align = 1
+
+[node name="Controls" type="Panel" parent="."]
+margin_left = 100.0
+margin_top = 400.0
+margin_right = 400.0
+margin_bottom = 700.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Controls"]
+margin_top = 21.0
+margin_right = 300.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 11 )
+text = "Controls"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Controls"]
+margin_left = 190.0
+margin_top = 120.0
+margin_right = 280.0
+margin_bottom = 159.0
+custom_fonts/font = ExtResource( 11 )
+text = "Move"
+valign = 1
+
+[node name="Label3" type="Label" parent="Controls"]
+margin_left = 190.0
+margin_top = 210.0
+margin_right = 280.0
+margin_bottom = 250.0
+custom_fonts/font = ExtResource( 11 )
+text = "Jump"
+valign = 1
+
+[node name="AKey" type="Panel" parent="Controls"]
+margin_left = 42.0
+margin_top = 120.0
+margin_right = 82.0
+margin_bottom = 158.0
+
+[node name="Label" type="Label" parent="Controls/AKey"]
+margin_right = 40.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 10 )
+text = "A"
+align = 1
+valign = 1
+
+[node name="DKey" type="Panel" parent="Controls"]
+margin_left = 97.0
+margin_top = 120.0
+margin_right = 137.0
+margin_bottom = 158.0
+
+[node name="Label" type="Label" parent="Controls/DKey"]
+margin_right = 40.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 10 )
+text = "D"
+align = 1
+valign = 1
+
+[node name="SpaceKey" type="Panel" parent="Controls"]
+margin_left = 30.0
+margin_top = 212.0
+margin_right = 150.0
+margin_bottom = 250.0
+
+[node name="Label" type="Label" parent="Controls/SpaceKey"]
+margin_right = 119.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 10 )
+text = "SPACE"
+align = 1
+valign = 1
+
+[node name="Controls2" type="Panel" parent="."]
+margin_left = 1000.0
+margin_top = 400.0
+margin_right = 1300.0
+margin_bottom = 700.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Controls2"]
+margin_top = 21.0
+margin_right = 300.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 11 )
+text = "How To Play"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Controls2"]
+margin_left = 24.0
+margin_top = 78.0
+margin_right = 276.0
+margin_bottom = 295.0
+custom_fonts/font = ExtResource( 11 )
+text = "Collect all the keys to unlock the doors, safely get to the end of each level!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 610.0
+margin_top = 472.0
+margin_right = 770.0
+margin_bottom = 555.0
+custom_colors/font_color = Color( 0.501961, 0.745098, 0.121569, 1 )
+custom_colors/font_color_hover = Color( 0.745098, 0.956863, 0.411765, 0.588235 )
+custom_colors/font_color_pressed = Color( 0.596078, 0.866667, 0.211765, 0.588235 )
+custom_fonts/font = ExtResource( 9 )
+text = "Start"
+flat = true
+script = ExtResource( 12 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 57.0
+margin_top = 133.0
+margin_right = 104.0
+margin_bottom = 180.0
+rect_rotation = -14.5
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
